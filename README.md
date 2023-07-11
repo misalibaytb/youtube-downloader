@@ -4,6 +4,7 @@ This youtube downloader is a simple node.js is a youtube downloader that uses th
 ## To do list
 | Item                               | status             |
 | -----------------------------------| ------------------ |
+| Multi language support              | :red_circle:       |
 | AutoUpdate                         | :red_circle:       |
 | Larger file support                    | :red_circle:       |
 | Windows install script     | :green_circle:       |
