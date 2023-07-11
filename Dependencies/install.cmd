@@ -1,4 +1,4 @@
-@echo on
+@echo off
 set programDir="%appdata%/Youtube-Downloader"
 mkdir %programDir%
 cd %programDir%
