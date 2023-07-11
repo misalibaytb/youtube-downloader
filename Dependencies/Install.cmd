@@ -10,10 +10,22 @@ ping localhost -n 2 >nul
 echo Checking for existing node.js installation...
 echo.
 IF EXIST node (
-    echo node.js is already installed
+    echo node.js is already installed (Localy)
+    del cnf /f /q >nul
+    echo local >cnf
     echo.
     goto ProgramInstall
 )
+node -v >nul 2>&1
+IF %ERRORLEVEL%==0 (
+    echo node.js is already installed (Globaly)
+    del cnf /f /q >nul
+    echo global >cnf
+    echo.
+    goto ProgramInstall
+)
+echo node.js is not installed
+echo.
 ping localhost -n 2 >nul
 echo Checking Architecure...
 echo.
@@ -49,6 +61,8 @@ IF %arch%==64 (
 )
 echo.
 echo node.js installed
+del cnf /f /q >nul
+echo local >cnf
 echo.
 goto ProgramInstall
 
@@ -74,8 +88,6 @@ ping localhost -n 2 >nul
 echo Installing dependencies...
 echo.
 ping localhost -n 2 >nul
-%programDir%/node/npm install
-echo.
 echo Dependencies installed
 echo.
 ping localhost -n 2 >nul

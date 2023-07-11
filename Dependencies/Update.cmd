@@ -8,6 +8,10 @@ echo.
 echo Please wait...
 echo.
 ping localhost -n 2 >nul
+node -v >nul 2>&1
+IF %ERRORLEVEL%==0 (
+    goto ProgramInstall
+)
 echo Checking Architecure...
 echo.
 @REM detect if 32-bit or 64-bit
@@ -59,8 +63,6 @@ ping localhost -n 2 >nul
 echo Installing dependencies...
 echo.
 ping localhost -n 2 >nul
-%programDir%/node/npm install
-echo.
 echo Dependencies Updated
 echo.
 ping localhost -n 2 >nul
