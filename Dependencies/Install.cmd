@@ -96,14 +96,10 @@ ping localhost -n 2 >nul
 echo Creating shortcuts...
 echo.
 ping localhost -n 2 >nul
-@REM create shortcut to %appdata%/Youtube-Downloader/start.cmd and %appdata%/Youtube-Downloader/uninstall.cmd with icon from %appdata%/Youtube-Downloader/icon.ico
-powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%appdata%/Microsoft/Windows/Start Menu/Programs/Youtube-Downloader.lnk'); $Shortcut.TargetPath = '%appdata%/Youtube-Downloader/start.cmd'; $Shortcut.iconLocation = '%appdata%/Youtube-Downloader/icon.ico'; $Shortcut.Save()"
-powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%appdata%/Microsoft/Windows/Start Menu/Programs/Youtube-Downloader Uninstall.lnk'); $Shortcut.TargetPath = '%appdata%/Youtube-Downloader/uninstall.cmd'; $Shortcut.iconLocation = '%appdata%/Youtube-Downloader/icon.ico'; $Shortcut.Save()"
-@REM add shortcut to desktop
-powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%userprofile%/Desktop/Youtube-Downloader.lnk'); $Shortcut.TargetPath = '%appdata%/Youtube-Downloader/start.cmd'; $Shortcut.iconLocation = '%appdata%/Youtube-Downloader/icon.ico'; $Shortcut.Save()"
-@REM add shortcut to start menu
-powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%appdata%/Microsoft/Windows/Start Menu/Programs/Youtube-Downloader.lnk'); $Shortcut.TargetPath = '%appdata%/Youtube-Downloader/start.cmd'; $Shortcut.iconLocation = '%appdata%/Youtube-Downloader/icon.ico'; $Shortcut.Save()"
-powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%appdata%/Microsoft/Windows/Start Menu/Programs/Youtube-Downloader Uninstall.lnk'); $Shortcut.TargetPath = '%appdata%/Youtube-Downloader/uninstall.cmd'; $Shortcut.iconLocation = '%appdata%/Youtube-Downloader/icon.ico'; $Shortcut.Save()"
+@REM create shortcut to %appdata%/Youtube-Downloader/start.cmd and %appdata%/Youtube-Downloader/uninstall.cmd with icon from %appdata%/Youtube-Downloader/icon.ico  run in %appdata%/Youtube-Downloader
+powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%appdata%/Microsoft/Windows/Start Menu/Programs/Youtube-Downloader.lnk'); $Shortcut.TargetPath = '%appdata%/Youtube-Downloader/start.cmd'; $Shortcut.iconLocation = '%appdata%/Youtube-Downloader/icon.ico'; $Shortcut.WorkingDirectory = '%appdata%/Youtube-Downloader'; $Shortcut.Save()"
+powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%appdata%/Microsoft/Windows/Start Menu/Programs/Youtube-Downloader Uninstall.lnk'); $Shortcut.TargetPath = '%appdata%/Youtube-Downloader/uninstall.cmd'; $Shortcut.iconLocation = '%appdata%/Youtube-Downloader/icon.ico'; $Shortcut.WorkingDirectory = '%appdata%/Youtube-Downloader'; $Shortcut.Save()"
+powershell -Command "$WshShell = New-Object -comObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%userprofile%/Desktop/Youtube-Downloader.lnk'); $Shortcut.TargetPath = '%appdata%/Youtube-Downloader/start.cmd'; $Shortcut.iconLocation = '%appdata%/Youtube-Downloader/icon.ico'; $Shortcut.WorkingDirectory = '%appdata%/Youtube-Downloader'; $Shortcut.Save()"
 echo.
 echo Shortcuts created
 echo.
