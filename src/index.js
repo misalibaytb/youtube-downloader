@@ -5,7 +5,7 @@
     var normalChars = "escrzyaieESCRZYAIE";
     specialChars = specialChars.split('');
     normalChars = normalChars.split('');
-    const version = '1.0.1';
+    const version = '1.0.2';
     const downloadFolder = `C:/Users/${require('os').userInfo().username}/Documents/Youtube Downloader/`
     console.log(`Youtube Downloader v${version}`);
     console.log('By: misaliba');
@@ -63,7 +63,7 @@
         const ffmpeg = require('fluent-ffmpeg');
         ffmpeg.setFfmpegPath(ffmpegPath);
         const readline = require('readline');
-        const tempFile = path.join(__dirname, 'temp.json');
+        const tempFile = path.join(`C:/Users/${require('os').userInfo().username}/AppData/Local/Temp/`, 'youtube-downloader-temp.json');
         const temp = []
         const queue = [];
         if (fs.existsSync(tempFile)) {
