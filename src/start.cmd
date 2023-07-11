@@ -36,4 +36,6 @@ IF %cnfFile% == global (
     )
     %cd%/node/node.exe index.js
 )
-pause
+    echo.
+    echo Press any key to exit...
+pause>nul

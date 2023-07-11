@@ -5,7 +5,8 @@
     var normalChars = "escrzyaieESCRZYAIE";
     specialChars = specialChars.split('');
     normalChars = normalChars.split('');
-    const version = '1.0.0';
+    const version = '1.0.1';
+    const downloadFolder = `C:/Users/${require('os').userInfo().username}/Documents/Youtube Downloader/`
     console.log(`Youtube Downloader v${version}`);
     console.log('By: misaliba');
     console.log('Github: https://github.com/misalibaytb/')
@@ -57,7 +58,7 @@
         const yts = require('yt-search');
         const fs = require('fs');
         const path = require('path');
-        fs.mkdirSync(path.join(__dirname, 'downloads'), { recursive: true });
+        fs.mkdirSync(path.join(downloadFolder), { recursive: true });
         const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
         const ffmpeg = require('fluent-ffmpeg');
         ffmpeg.setFfmpegPath(ffmpegPath);
@@ -98,8 +99,8 @@
                 const quality = qualityMap[item.quality];
                 var filename = item.filename
                 const ext = type == 'audio' ? 'mp3' : 'mp4';
-                fs.mkdirSync(path.join(__dirname, 'downloads'), { recursive: true });
-                const file = path.join(__dirname, `/downloads/${filename}.${ext}`);
+                fs.mkdirSync(path.join(downloadFolder), { recursive: true });
+                const file = path.join(downloadFolder, `/${filename}.${ext}`);
                 if (type == 'audio') {
                     const stream = ytdl(item.url, {
                         filter: 'audioonly',
@@ -134,15 +135,15 @@
                     const heigestQualityWithAudio = video.formats.filter((format) => format.hasAudio && format.hasVideo)[0];
                     const lowestQualityWithAudio = video.formats.filter((format) => format.hasAudio && format.hasVideo)[video.formats.filter((format) => format.hasAudio && format.hasVideo).length - 1];
                     const currentQuality = quality == 'highest' ? heigestQualityWithAudio : lowestQualityWithAudio
-                    const audioSrc = path.join(__dirname, `downloads/${video.videoDetails.videoId}/${filename}tmp.mp3`);
-                    const videoSrc = path.join(__dirname, `downloads/${video.videoDetails.videoId}/${filename}tmp.mp4`);
-                    const outputSrc = path.join(__dirname, `downloads/${video.videoDetails.videoId}/${filename}.mp4`);
+                    const audioSrc = path.join(downloadFolder, `/${video.videoDetails.videoId}/${filename}tmp.mp3`);
+                    const videoSrc = path.join(downloadFolder, `/${video.videoDetails.videoId}/${filename}tmp.mp4`);
+                    const outputSrc = path.join(downloadFolder, `/${video.videoDetails.videoId}/${filename}.mp4`);
                     const streamAudio = ytdl(item.url, {
                         filter: 'audioonly',
                         highWaterMark: 1 << 25,
                         format: currentQuality
                     });
-                    fs.mkdirSync(path.join(__dirname, 'downloads', video.videoDetails.videoId), { recursive: true });
+                    fs.mkdirSync(path.join(downloadFolder, video.videoDetails.videoId), { recursive: true });
                     ffmpeg(streamAudio)
                         .save(audioSrc)
                         .on('progress', (progress) => {
