@@ -18,6 +18,7 @@ This youtube downloader is a simple node.js is a youtube downloader that uses th
 | Download video and audio                   | :green_circle:       |
 | Download Playlist                   | :green_circle:       |
 | Download restore last download list                  | :green_circle:       | 
+| Multi Threaded Download                   | :red_circle:       |
 
 
 ## Installation
