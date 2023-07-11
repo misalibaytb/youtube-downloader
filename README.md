@@ -24,5 +24,5 @@ This youtube downloader is a simple node.js is a youtube downloader that uses th
 
 ## Installation
 ### Windows
-1. Download the [windows installer](https://raw.githubusercontent.com/misalibaytb/youtube-downloader/main/Dependencies/Install.cmd) !! WARNING !! You can download Node.Js from [Nodejs.org](https://nodejs.org/en/download/) if you want to speed up the installation and update process
+1. Download the <a href="https://raw.githubusercontent.com/misalibaytb/youtube-downloader/main/Dependencies/Install.cmd" download>Windows installer</a> file !! WARNING !! You can download Node.Js from [Nodejs.org](https://nodejs.org/en/download/) if you want to speed up the installation and update process
 2. Run the installer
