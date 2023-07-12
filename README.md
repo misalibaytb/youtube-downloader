@@ -14,7 +14,7 @@ This youtube downloader is a simple node.js is a youtube downloader that uses th
 | Ubuntu Install script                   | :red_circle:       |
 | Mac install script                   | :red_circle:       |
 | GUI                   | :red_circle:       |
-| CLI                   | :red_circle:       |
+| CLI                   | :green_circle:       |
 | Download Playlist                   | :green_circle:       |
 | Download Video                   | :green_circle:       |
 | Download Audio                   | :green_circle:       |
