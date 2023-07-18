@@ -5,11 +5,11 @@ This youtube downloader is a simple node.js is a youtube downloader that uses th
 | Item                               | status             |
 | -----------------------------------| ------------------ |
 | Option to select custom download path | :green_circle:       |
-| CLi download path selector         | :red_circle:       |
-| Download Percentage                | :red_circle:       |
+| CLi download path selector         | :green_circle:       |
+| Download Percentage                | :green_circle:       |
 | Multi language support              | :green_circle:       |
 | AutoUpdate                         | :green_circle:       |
-| Larger file support                    | :red_circle:       |
+| Larger file support                    | :green_circle:       |
 | Windows install script     | :green_circle:       |
 | Ubuntu Install script                   | :red_circle:       |
 | Mac install script                   | :red_circle:       |
@@ -19,7 +19,7 @@ This youtube downloader is a simple node.js is a youtube downloader that uses th
 | Download Video                   | :green_circle:       |
 | Download Audio                   | :green_circle:       |
 | Download restore last download list                  | :green_circle:       | 
-| Multi Threaded Download                   | :red_circle:       |
+| Multi Threaded Download                   | :green_circle:       |
 | Download from other sites                   | :red_circle:       |
 
 
